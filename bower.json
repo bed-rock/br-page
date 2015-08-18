@@ -1,6 +1,6 @@
 {
   "name": "br-page",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/bed-rock/br-page",
   "authors": [
     "cbfranca <cleidsonbf@gmail.com>",
@@ -31,7 +31,6 @@
     "br-page-header": "~1.0.0",
     "br-search": "~1.0.0",
     "br-input": "~1.0.0",
-    "br-dropdown-list": "~1.0.0",
-
+    "br-dropdown-list": "~1.0.0"
   }
 }

@@ -5,13 +5,22 @@
 	<title>br-page</title>
     <link rel="stylesheet" href="../../bedrock/dist/css/style.min.css">
 
+  <link rel="import" type="html" href="../../polymer/polymer.html">
 	<script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
   	<link rel="import" href="../../br-page/src/br-page.html">
 
 </head>
 <body>
-	<br-page 
-		
+<!--
+Usage:
+Tag:<br-page>< /br-page>
+Attributes:
+  navOptions: Array
+  apps: Array
+  accountOptions: Array
+-->
+	<br-page
+
 		nav-options='[{ "label":"Gerencial", "link":"#", "group":"true"},
 				{ "label":"Patrimônio", "link":"#", "icon":"br-icons:user",
 				"submenu":[
@@ -52,7 +61,7 @@
         {"id":"9", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"}]'
 
         account-options='[{"label": "Minha conta", "link":"/account"}, {"label": "Sair", "link":"/logout"}]'>
-        
+
 	</br-page>
 </body>
 </html>

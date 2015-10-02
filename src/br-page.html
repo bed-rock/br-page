@@ -10,55 +10,51 @@
 <link rel="import" href="../../br-search/src/br-search.html">
 
 <dom-module id="br-page">
-<template>
+	<template>
 
-	<section class="page">
+		<section class="page">
 
-		<br-header>
+			<br-header class="header">
 
-		<div class="group__left">
+				<div class="group__left">
 
-			<br-nav class="header--btn"
-			items='{{navOptions}}'>
-		</br-nav>
+					<br-nav class="header--btn" items='{{navOptions}}'></br-nav>
 
-		<a href="/" class="logo">
-			<img src="http://azpanelh.azurewebsites.net/Assets/img/logo_azimutit.png" alt="Logo">
-		</a>
+					<a href="/" class="logo">
+						<img src="http://azpanelh.azurewebsites.net/Assets/img/logo_azimutit.png" alt="Logo">
+					</a>
 
-	</div>
+				</div>
 
-	<div class="group__center">
-		<br-search></br-search>
-	</div>
+				<div class="group__center">
+					<br-search></br-search>
+				</div>
 
-	<div class="group__right">
+				<div class="group__right">
 
-		<br-apps-navigation position="right" class="header--btn"
-		options='{{apps}}'
-		icon="br-icons:apps">
-	</br-apps-navigation>
+					<br-apps-navigation position="right" class="header--btn" options='{{apps}}' icon="br-icons:apps"></br-apps-navigation>
 
-	<br-dropdown-list
-	icon="br-icons:user"
-	position="right"
-	class="header--btn"
-	options='{{accountOptions}}'>
-</br-dropdown-list>
+					<br-dropdown-list
+						icon="br-icons:user"
+						position="right"
+						class="header--btn"
+						options='{{accountOptions}}'>
+					</br-dropdown-list>
 
-</div>
+				</div>
 
-</br-header>
+			</br-header>
 
 
-<main class="page-main">
-	<content>
-	</content>
-</main>
+			<main class="main">
+				<content>
+				</content>
+			</main>
 
-</section>
+		</section>
 
-</template>
+	</template>
+
 	<script>
 		Polymer({
 			is: 'br-page',

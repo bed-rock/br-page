@@ -27,7 +27,7 @@
 				</div>
 
 				<div class="group__center">
-					<br-search options="{{searchOptions}}" min-length="{{searchMinLength}}"></br-search>
+					<br-search options="{{searchOptions}}" min-length="{{searchMinLength}}" placeholder="{{searchPlaceholder}}"></br-search>
 				</div>
 
 				<div class="group__right">
@@ -64,7 +64,8 @@
 				apps: Array,
 				accountOptions: Array,
 				searchOptions: Array,
-			  searchMinLength: Number
+			  	searchMinLength: Number
+			  	searchPlaceholder: String
 			}
 		});
 	</script>

@@ -20,7 +20,7 @@
 
 					<br-nav class="header--btn" items='{{navOptions}}'></br-nav>
 
-					<a href="/" class="logo">
+					<a href$="{{logoLink}}" class="logo">
 						<img src="http://azpanelh.azurewebsites.net/Assets/img/logo_azimutit.png" alt="Logo">
 					</a>
 
@@ -60,6 +60,7 @@
 			is: 'br-page',
 
 			properties: {
+				logoLink: String,
 				navOptions: Array,
 				apps: Array,
 				accountOptions: Array,

@@ -20,46 +20,34 @@
 <dom-module id="br-page">
 	<template>
 
-		<section class="page">
+    <section class="page">
+      <br-header class="header">
+        <div class="group__left">
+          <br-nav class="header--btn" items='{{navOptions}}'></br-nav>
+          <a href$="{{logoLink}}" class="logo">
+            <img src$="{{logoSrc}}" alt="Logo">
+          </a>
+        </div>
+        <div class="group__center">
+          <br-search url-api-request="{{urlApiRequest}}"
+                     min-length="{{searchMinLength}}" 
+                     placeholder="{{searchPlaceholder}}"></br-search>
+        </div>
+        <div class="group__right">
+          <br-apps-navigation position="right" class="header--btn" options='{{apps}}' icon="br-icons:apps"></br-apps-navigation>
+          <br-dropdown-list icon="br-icons:user"
+                            position="right"
+                            class="header--btn"
+                            options='{{accountOptions}}'>
+          </br-dropdown-list>
+        </div>
+      </br-header>
 
-			<br-header class="header">
-
-				<div class="group__left">
-
-					<br-nav class="header--btn" items='{{navOptions}}'></br-nav>
-
-					<a href$="{{logoLink}}" class="logo">
-						<img src="http://azpanelh.azurewebsites.net/Assets/img/logo_azimutit.png" alt="Logo">
-					</a>
-
-				</div>
-
-				<div class="group__center">
-					<br-search options="{{searchOptions}}" min-length="{{searchMinLength}}" placeholder="{{searchPlaceholder}}"></br-search>
-				</div>
-
-				<div class="group__right">
-
-					<br-apps-navigation position="right" class="header--btn" options='{{apps}}' icon="br-icons:apps"></br-apps-navigation>
-
-					<br-dropdown-list
-						icon="br-icons:user"
-						position="right"
-						class="header--btn"
-						options='{{accountOptions}}'>
-					</br-dropdown-list>
-
-				</div>
-
-			</br-header>
-
-
-			<main class="main">
-				<content>
-				</content>
-			</main>
-
-		</section>
+      <main class="main">
+        <content>
+        </content>
+      </main>
+    </section>
 
 	</template>
 
@@ -68,11 +56,12 @@
 			is: 'br-page',
 
 			properties: {
+				logoSrc: String,
 				logoLink: String,
 				navOptions: Array,
 				apps: Array,
 				accountOptions: Array,
-				searchOptions: Array,
+				searchUrlApiRequest: String,
 		  	searchMinLength: Number,
 		  	searchPlaceholder: String
 			}

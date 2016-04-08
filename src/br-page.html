@@ -8,7 +8,6 @@
 <link rel="import" href="../../br-button/src/br-button.html">
 <link rel="import" href="../../br-page-header/src/br-page-header.html">
 <link rel="import" href="../../br-search/src/br-search.html">
-
 <link rel="import" href="../../br-checkbox-group/src/br-checkbox-group.html" />
 <link rel="import" href="../../br-checkbox-grouped/src/br-checkbox-grouped.html" />
 <link rel="import" href="../../br-checkbox/src/br-checkbox.html" />
@@ -16,25 +15,24 @@
 <link rel="import" href="../../br-radio-button/src/br-radio-button.html" />
 <link rel="import" href="../../br-form/src/br-form.html">
 <link rel="import" href="../../br-modal/src/br-modal.html">
-
 <dom-module id="br-page">
-	<template>
-
+  <template>
     <section class="page">
       <br-header class="header">
         <div class="group__left">
-          <br-nav class="header--btn" items='{{navOptions}}'></br-nav>
+          <br-nav id="brNav" class="header--btn" items='{{navOptions}}'></br-nav>
           <a href$="{{logoLink}}" class="logo">
             <img src$="{{logoSrc}}" alt="Logo">
           </a>
         </div>
         <div class="group__center">
-          <br-search url-api-request="{{urlApiRequest}}"
-                     min-length="{{searchMinLength}}" 
+          <br-search id="brSearchBar"
+                     url-api-request="{{urlApiRequest}}"
+                     min-length="{{searchMinLength}}"
                      placeholder="{{searchPlaceholder}}"></br-search>
         </div>
         <div class="group__right">
-          <br-apps-navigation position="right" class="header--btn" options='{{apps}}' icon="br-icons:apps"></br-apps-navigation>
+          <br-apps-navigation id="brApps" position="right" class="header--btn" options='{{apps}}' icon="br-icons:apps"></br-apps-navigation>
           <br-dropdown-list icon="br-icons:user"
                             position="right"
                             class="header--btn"
@@ -42,29 +40,70 @@
           </br-dropdown-list>
         </div>
       </br-header>
-
       <main class="main">
         <content>
         </content>
       </main>
     </section>
+  </template>
+  <script>
+    Polymer({
+      is: 'br-page',
 
-	</template>
+      properties: {
+        logoSrc: String,
+        logoLink: String,
+        hiddenNav: {
+          type: String,
+          value: 'false'
+        },
+        navOptions: Array,
 
-	<script>
-		Polymer({
-			is: 'br-page',
+        hiddenApps: {
+          type: String,
+          value: 'false'
+        },
+        apps: Array,
+        accountOptions: Array,
+        hiddenSearchBar: {
+          type: String,
+          value: 'false'
+        },
+        searchUrlApiRequest: String,
+        searchMinLength: Number,
+        searchPlaceholder: String
+      },
 
-			properties: {
-				logoSrc: String,
-				logoLink: String,
-				navOptions: Array,
-				apps: Array,
-				accountOptions: Array,
-				searchUrlApiRequest: String,
-		  	searchMinLength: Number,
-		  	searchPlaceholder: String
-			}
-		});
-	</script>
+      ready: function () {
+        this._isAppsHidden();
+        this._isNavHidden();
+        this._isSearchBarHidden();
+      },
+
+      _isAppsHidden: function () {
+
+        if (this.hiddenApps == 'true')
+          this.$.brApps.setAttribute('hidden', true);
+        else
+          this.$.brApps.removeAttribute('hidden');
+      },
+
+      _isNavHidden: function () {
+
+        if (this.hiddenNav == 'true')
+          this.$.brNav.setAttribute('hidden', true);
+        else
+          this.$.brNav.removeAttribute('hidden');
+      },
+
+      _isSearchBarHidden: function () {
+
+        if (this.hiddenSearchBar == 'true')
+        this.$.brSearchBar.setAttribute('hidden', true);
+      else
+          this.$.brSearchBar.removeAttribute('hidden');
+    }
+
+    });
+  </script>
 </dom-module>

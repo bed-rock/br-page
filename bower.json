@@ -1,6 +1,6 @@
 {
   "name": "br-page",
-  "version": "1.0.11",
+  "version": "1.1.1",
   "homepage": "https://github.com/bed-rock/br-page",
   "authors": [
     "cbfranca <cleidsonbf@gmail.com>",
@@ -22,15 +22,15 @@
     "tests"
   ],
   "dependencies": {
-    "bedrock-base": "~1.0.0",
-    "br-header": "~1.0.0",
-    "br-icons": "~1.0.0",
-    "br-nav": "~1.0.0",
-    "br-apps-navigation": "~1.0.0",
-    "br-button": "~1.0.0",
-    "br-page-header": "~1.0.0",
-    "br-search": "~1.0.0",
-    "br-input": "~1.0.0",
-    "br-dropdown-list": "~1.0.0"
+    "bedrock-base": "latest",
+    "br-header": "latest",
+    "br-icons": "latest",
+    "br-nav": "latest",
+    "br-apps-navigation": "latest",
+    "br-button": "latest",
+    "br-page-header": "latest",
+    "br-search": "latest",
+    "br-input": "latest",
+    "br-dropdown-list": "latest"
   }
 }
